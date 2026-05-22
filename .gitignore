@@ -1,0 +1,94 @@
+# ============================================================================
+# Java / Maven
+# ============================================================================
+target/
+build/
+out/
+*.class
+*.jar
+*.war
+*.ear
+# Maven Wrapper jar must be committed so `mvnw` works on a fresh clone
+!**/.mvn/wrapper/maven-wrapper.jar
+hs_err_pid*
+replay_pid*
+
+# Maven wrapper downloaded distribution
+.mvn/wrapper/maven-wrapper.jar.lck
+
+# ============================================================================
+# IDEs
+# ============================================================================
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Eclipse / STS
+.settings/
+.project
+.classpath
+.factorypath
+.springBeans
+.sts4-cache/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# NetBeans
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# ============================================================================
+# Node / Frontend (for later modules)
+# ============================================================================
+node_modules/
+dist/
+.vite/
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ============================================================================
+# OS
+# ============================================================================
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# ============================================================================
+# Secrets / Environment
+# ============================================================================
+.env
+.env.*
+!.env.example
+application-local.yml
+application-local.properties
+application-secret.yml
+application-secret.properties
+*.pem
+*.key
+*.p12
+*.jks
+
+# ============================================================================
+# Logs
+# ============================================================================
+*.log
+logs/
+spring.log
+
+# ============================================================================
+# Misc
+# ============================================================================
+.tmp/
+tmp/
+*.swp
+*.swo

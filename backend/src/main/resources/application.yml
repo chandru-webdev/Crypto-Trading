@@ -1,0 +1,67 @@
+spring:
+  application:
+    name: crypto-trading-simulator
+
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:crypto_simulator}?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:root}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+    show-sql: false
+    open-in-view: false
+
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD:}
+      timeout: 2000ms
+
+  mail:
+    host: ${MAIL_HOST:smtp.gmail.com}
+    port: ${MAIL_PORT:587}
+    username: ${MAIL_USERNAME:noreply@example.com}
+    password: ${MAIL_PASSWORD:changeme}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+server:
+  port: 8080
+  error:
+    include-message: always
+
+# Application-specific configuration
+app:
+  jwt:
+    # IMPORTANT: replace in production. Must be a base64-encoded key (>= 256 bits for HS256).
+    # Default below is for local dev only.
+    secret: ${JWT_SECRET:Y3J5cHRvLXNpbS1zZWNyZXQta2V5LWNoYW5nZS1tZS1pbi1wcm9kdWN0aW9uLTEyMzQ1Njc4OTA=}
+    access-token-ttl-minutes: 15
+    refresh-token-ttl-days: 7
+    issuer: crypto-trading-simulator
+  auth:
+    email-verification-ttl-minutes: 15
+    password-reset-ttl-minutes: 15
+    verification-base-url: ${APP_VERIFY_URL:http://localhost:5173/verify-email}
+    password-reset-base-url: ${APP_RESET_URL:http://localhost:5173/reset-password}
+  mail:
+    from: ${MAIL_FROM:noreply@cryptosim.local}
+    enabled: ${MAIL_ENABLED:false}  # if false, EmailService logs the link instead of sending
+
+logging:
+  level:
+    root: INFO
+    com.cryptosim: DEBUG
+    org.springframework.security: INFO
