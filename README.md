@@ -1,3 +1,4 @@
+
 # Crypto Trading Simulator
 
 A full-stack crypto trading simulator with virtual money, real-time Binance prices, portfolio tracking, and a global leaderboard. Built module-by-module from a production-style guide.
