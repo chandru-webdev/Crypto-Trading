@@ -45,7 +45,7 @@ This is designed as a **resume-grade Spring Boot + React project** — productio
 | 2 | Real-Time Price Feed (Binance WS + Redis pub/sub)  | next |
 | 3 | Trade Execution (atomic BUY/SELL, BigDecimal)      | planned |
 | 4 | Portfolio (live valuation + PnL)                   | planned |
-| 5 | Leaderboard + Trade History + Watchlist            | planned |
+| 5 | Leaderboard + Trade History + Watchlist            | planned |                
 | 6 | React Frontend                                     | planned |
 | 7 | Tests + Docker Compose                             | planned |
 
